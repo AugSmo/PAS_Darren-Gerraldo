@@ -1,0 +1,450 @@
+/* General Reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+  font-family: 'Muli', sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: #f4fdf4; 
+  line-height: 1.6;
+}
+
+/* Navbar */
+/* Navbar Container */
+.navbar {
+  background: #ffffff;
+  border-top: 5px solid #29ca8e;
+  border-bottom: 0;
+  -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand/Logo */
+.navbar-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.navbar-brand:hover {
+  color: #d4e5d4; 
+  transition: color 0.3s ease;
+}
+
+/* Navbar Toggle for Mobile */
+.navbar-toggle {
+  background-color: transparent;
+  border: none;
+  display: none; /* Default hidden */
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #ffffff;
+  display: block;
+  height: 3px;
+  width: 25px;
+  margin: 5px auto;
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar Links */
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li {
+  position: relative;
+}
+
+.navbar-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.navbar-nav a:hover,
+.navbar-nav .active a {
+  background-color: #3cba71; /* Hijau terang */
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+/* Dropdown Menu */
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2e8b57; /* Hijau gelap */
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-nav .dropdown-menu li {
+  padding: 0;
+}
+
+.navbar-nav .dropdown-menu a {
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.navbar-nav .dropdown-menu a:hover {
+  background-color: #3cba71; /* Hijau terang */
+  transition: 0.3s ease;
+} 
+
+.custom-navbar .navbar-brand {
+  color: #f7f7f7;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-toggle {
+      display: block; /* Tampilkan toggle button */
+  }
+
+  .navbar-collapse {
+      display: none; /* Sembunyikan menu default */
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+  }
+
+  .navbar-collapse.show {
+      display: flex; /* Tampilkan menu saat toggle diaktifkan */
+  }
+
+  .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+} 
+
+/* Atur ulang navigasi bar untuk layar kecil */
+@media (max-width: 768px) {
+  .navbar-collapse {
+      display: none; /* Sembunyikan menu secara default */
+      flex-direction: column; /* Tampilkan menu sebagai kolom */
+      background-color: #2e8b57; /* Warna latar hijau */
+      position: absolute;
+      top: 100%; /* Tepat di bawah navbar */
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  }
+
+  .navbar-collapse.show {
+      display: flex; /* Tampilkan menu saat toggle diaktifkan */
+  }
+
+  .navbar-nav {
+      flex-direction: column; /* Ubah menu menjadi kolom */
+      text-align: left;
+      gap: 0.5rem;
+      padding-left: 1rem;
+  }
+
+  .navbar-toggle {
+      display: block; /* Tampilkan tombol toggle */
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      padding: 0.5rem;
+  }
+
+  .navbar-toggle .icon-bar {
+      background-color: #ffffff; /* Warna putih untuk icon */
+      height: 3px;
+      width: 25px;
+      margin: 5px auto;
+      transition: 0.3s ease;
+  }
+
+  .navbar-toggle:hover .icon-bar {
+      background-color: #3cba71; /* Warna hijau terang saat hover */
+  }
+} 
+
+select[name="jenis_mobil"] {
+  width: 100%; /* Lebar penuh */
+  padding: 10px; /* Spasi di dalam dropdown */
+  font-size: 16px; /* Ukuran font */
+  border: 2px solid #2e8b57; /* Warna border hijau */
+  border-radius: 5px; /* Sudut melengkung */
+  background-color: #ffffff; /* Warna latar */
+  color: #2e8b57; /* Warna teks hijau */
+  outline: none; /* Hilangkan outline default */
+  appearance: none; /* Hilangkan panah default pada browser */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Animasi transisi */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Hover dan fokus pada select */
+select[name="jenis_mobil"]:hover, 
+select[name="jenis_mobil"]:focus {
+  border-color: #3cba71; /* Warna border hijau lebih terang */
+  background-color: #f9f9f9; /* Latar sedikit abu untuk hover */
+  color: #3cba71;
+}
+
+/* Styling untuk option */
+select[name="jenis_mobil"] option {
+  padding: 10px; /* Spasi antar teks di dalam option */
+  font-size: 16px; /* Ukuran font */
+  color: #333333; /* Warna teks option */
+  background-color: #ffffff; /* Latar default */
+}
+
+/* Hover pada option (jika didukung browser) */
+select[name="jenis_mobil"] option:hover {
+  background-color: #3cba71; /* Latar hijau terang */
+  color: #ffffff; /* Teks putih */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  select[name="jenis_mobil"] {
+      font-size: 14px; /* Ukuran font lebih kecil untuk layar kecil */
+      padding: 8px; /* Padding lebih kecil */
+  }
+}
+
+
+*
+/* Button */
+button {
+  background-color: #2e8b57;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #3cba71;
+  transition: 0.3s;
+}
+
+/* Form */
+form {
+  background: #eaf8e6; 
+  padding: 2rem;
+  border: 1px solid #b3d9b3; 
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2e8b57;
+}
+
+form input[type="text"], form input[type="date"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #b3d9b3;
+  border-radius: 5px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 1rem;
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table th {
+  background-color: #2e8b57; /* Hijau gelap */
+  color: #ffffff;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+table td {
+  padding: 0.8rem;
+  color: #333333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table tr:hover {
+  background-color: #f0f8f0; /* Hijau lembut saat hover */
+  transition: background-color 0.3s ease;
+}
+
+table tr:last-child td {
+  border-bottom: none; /* Hapus border bawah di baris terakhir */
+}
+
+/* Footer */
+#footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Membuat setiap section menyebar */
+    align-items: flex-start; /* Merapikan ke bagian atas */
+    max-width: 1200px; /* Batas lebar maksimum */
+    margin: 0 auto; /* Sentralisasi kontainer */
+    padding: 0 20px; /* Spasi horizontal */
+}
+
+.footer-section {
+    flex: 1; /* Semua section memiliki lebar sama */
+    margin: 0 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section p, 
+.footer-section a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #3cba71; /* Warna hijau untuk hover */
+}
+
+.quick-links a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.quick-links a:hover {
+    color: #3cba71; /* Warna hijau untuk hover */
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Susunan menjadi vertikal untuk layar kecil */
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+        text-align: center; /* Rata tengah untuk layar kecil */
+    }
+}
+
+
+
+/* Buttons inside Table */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.action-buttons a {
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+
+.action-buttons .edit-button {
+  background-color: #3cba71; /* Hijau terang */
+}
+
+.action-buttons .edit-button:hover {
+  background-color: #34a65d;
+  transition: 0.3s ease;
+}
+
+.action-buttons .delete-button {
+  background-color: #e74c3c; /* Merah */
+}
+
+.action-buttons .delete-button:hover {
+  background-color: #c0392b;
+  transition: 0.3s ease;
+}
